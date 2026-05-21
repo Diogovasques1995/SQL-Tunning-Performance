@@ -59,4 +59,7 @@ Tecnologias Utilizadas: Azure SQL Database, Azure Logic Apps, SQL Server Managem
 
 ```markdown
 ### 📈 Gráfico de Telemetria (Picos de 100% antes do Índice)
-![Gráfico de Telemetria da Azure](telemetria.png)
+
+<p align="center">
+  <img src="telemetria.png" alt="Gráfico de Telemetria Azure" width="100%">
+</p>
