@@ -39,10 +39,13 @@ Sintoma: O banco de dados ficava temporariamente indisponível/lento para outras
 🛠️ A Solução: Performance Tuning (Otimização)
 Para mitigar o uso de hardware e derrubar o tempo de resposta, foi desenhada uma estratégia de indexação. Criamos um Índice Não-Clusterizado (Non-Clustered Index) cobrindo as colunas de filtro (produto e categoria) e incluindo a coluna de cálculo (valor), funcionando como um sumário remissivo para o motor do banco.
 
+```
 SQL
 CREATE INDEX idx_vendas_produto_categoria 
 ON Vendas_Performance (produto, categoria) 
 INCLUDE (valor);
+```
+
 🚀 Resultados Finais e Impacto
 Após a aplicação do índice, forçamos um novo disparo da esteira e os gráficos de telemetria comprovaram o sucesso do tuning:
 
@@ -52,14 +55,12 @@ Tempo de Resposta: A execução da consulta passou de segundos para poucos milis
 
 Eficiência de Custo (FinOps): Provamos que com a otimização de queries é possível manter uma aplicação performática em camadas de computação baratas, gerando economia direta de infraestrutura para o negócio.
 
+📈 Gráfico de Telemetria (Picos de 100% antes do Índice)
 Tecnologias Utilizadas: Azure SQL Database, Azure Logic Apps, SQL Server Management Studio (SSMS), T-SQL, Cloud Telemetry & Metrics.
-
 
 ---
 
 ```markdown
 ### 📈 Gráfico de Telemetria (Picos de 100% antes do Índice)
-
-<p align="center">
-  <img src="telemetria.png" alt="Gráfico de Telemetria Azure" width="100%">
-</p>
+![Gráfico de Telemetria da Azure](telemetria.png)
+```
